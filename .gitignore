@@ -1,0 +1,14 @@
+/.idea
+/.phpunit.result.cache
+/_old/
+/_server/vendor/
+/_server/private/vendor/
+/_server/public/vendor/
+/_unused/
+/composer.phar
+/logs/
+/release/
+/src/test/vendor/
+/swagger/vendor/
+/tests/vendor/
+/vendor/
