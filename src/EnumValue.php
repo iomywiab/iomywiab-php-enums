@@ -11,7 +11,7 @@
  * Class name...: EnumValue.php
  * Project name.: iomywiab-php-enums
  * Module name..: iomywiab-php-enums
- * Last modified: 2021-10-21 08:09:16
+ * Last modified: 2021-10-21 08:24:44
  */
 
 declare(strict_types=1);
@@ -19,14 +19,14 @@ declare(strict_types=1);
 namespace iomywiab\iomywiab_php_enums;
 
 use AssertionError;
-use iomywiab\iomywiab_php_enums\helpers\PropertyGettersTrait;
-use LogicException;
 use iomywiab\iomywiab_php_enums\exceptions\EnumAttributeNotFoundException;
 use iomywiab\iomywiab_php_enums\exceptions\EnumException;
 use iomywiab\iomywiab_php_enums\exceptions\EnumNotFoundException;
 use iomywiab\iomywiab_php_enums\exceptions\InvalidEnumDefinitionException;
+use iomywiab\iomywiab_php_enums\helpers\PropertyGettersTrait;
 use iomywiab\iomywiab_php_enums\interfaces\EnumDefinitionInterface;
 use iomywiab\iomywiab_php_enums\interfaces\EnumValueInterface;
+use LogicException;
 
 /**
  * Class EnumValue
@@ -70,20 +70,6 @@ abstract class EnumValue implements EnumValueInterface
     }
 
     /**
-     * @inheritDoc
-     */
-    public function getOrdinal(): int {
-        return $this->ordinal;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getDefinition(): EnumDefinitionInterface {
-        return $this->definition;
-    }
-
-    /**
      * @param $ordinalOrName
      * @param $arguments
      * @return EnumValueInterface|EnumDefinitionInterface
@@ -115,6 +101,22 @@ abstract class EnumValue implements EnumValueInterface
         } catch (EnumException $cause) {
             throw new LogicException('Unable to get name of enum', $cause);
         }
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getOrdinal(): int
+    {
+        return $this->ordinal;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getDefinition(): EnumDefinitionInterface
+    {
+        return $this->definition;
     }
 
     /**
