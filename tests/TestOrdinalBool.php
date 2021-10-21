@@ -11,7 +11,7 @@
  * Class name...: TestOrdinalBool.php
  * Project name.: iomywiab-php-enums
  * Module name..: iomywiab-php-enums
- * Last modified: 2021-10-20 20:41:20
+ * Last modified: 2021-10-21 07:18:23
  */
 
 declare(strict_types=1);

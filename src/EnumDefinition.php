@@ -11,7 +11,7 @@
  * Class name...: EnumDefinition.php
  * Project name.: iomywiab-php-enums
  * Module name..: iomywiab-php-enums
- * Last modified: 2021-10-20 20:38:50
+ * Last modified: 2021-10-21 08:08:25
  */
 
 declare(strict_types=1);
@@ -46,7 +46,7 @@ use ReflectionException;
 class EnumDefinition implements EnumDefinitionInterface
 {
     // All integer values are considered to be enum values
-    // All array values are consiered to be attributes
+    // All array values are considered to be attributes
     // Constants integer and arrays listed in array ENUM_IGNORE are ignored
     // All other values are ignored anyway
     public const ENUM_IGNORE = 'ENUM_IGNORE';

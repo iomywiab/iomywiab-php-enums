@@ -7,15 +7,15 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * File name....: SplObserverTrait.php
- * Class name...: SplObserverTrait.php
+ * File name....: SplSubjectTrait.php
+ * Class name...: SplSubjectTrait.php
  * Project name.: iomywiab-php-enums
  * Module name..: iomywiab-php-enums
- * Last modified: 2021-10-20 20:52:13
+ * Last modified: 2021-10-21 08:08:25
  */
 declare(strict_types=1);
 
-namespace iomywiab\iomywiab_php_enums;
+namespace iomywiab\iomywiab_php_enums\helpers;
 
 use SplObjectStorage;
 use SplObserver;

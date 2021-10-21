@@ -11,7 +11,7 @@
  * Class name...: EnumValue.php
  * Project name.: iomywiab-php-enums
  * Module name..: iomywiab-php-enums
- * Last modified: 2021-10-20 20:38:50
+ * Last modified: 2021-10-21 08:09:16
  */
 
 declare(strict_types=1);
@@ -19,8 +19,8 @@ declare(strict_types=1);
 namespace iomywiab\iomywiab_php_enums;
 
 use AssertionError;
+use iomywiab\iomywiab_php_enums\helpers\PropertyGettersTrait;
 use LogicException;
-use iomywiab\iomywiab_php_design_patterns\properties\GettersTrait;
 use iomywiab\iomywiab_php_enums\exceptions\EnumAttributeNotFoundException;
 use iomywiab\iomywiab_php_enums\exceptions\EnumException;
 use iomywiab\iomywiab_php_enums\exceptions\EnumNotFoundException;
@@ -30,20 +30,19 @@ use iomywiab\iomywiab_php_enums\interfaces\EnumValueInterface;
 
 /**
  * Class EnumValue
+ *
+ * Optional overwrite: Change formatting of the name
+ *
+ * public static function getFormattedName(string $name): string {
+ *    return str_replace('_', '-', strtolower($name));
+ * }
+ *
  * @package iomywiab\iomywiab_php_enums
+ * @noinspection SpellCheckingInspection
  */
 abstract class EnumValue implements EnumValueInterface
 {
-    use GettersTrait;
-
-//    /**
-//     * Optional overwrite: Change formatting of the name
-//     * @param string $name
-//     * @return string
-//     */
-//    public static function getFormattedName(string $name): string {
-//        return str_replace('_', '-', strtolower($name));
-//    }
+    use PropertyGettersTrait;
 
     /**
      * @var int
@@ -71,6 +70,20 @@ abstract class EnumValue implements EnumValueInterface
     }
 
     /**
+     * @inheritDoc
+     */
+    public function getOrdinal(): int {
+        return $this->ordinal;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getDefinition(): EnumDefinitionInterface {
+        return $this->definition;
+    }
+
+    /**
      * @param $ordinalOrName
      * @param $arguments
      * @return EnumValueInterface|EnumDefinitionInterface
@@ -90,22 +103,6 @@ abstract class EnumValue implements EnumValueInterface
         }
 
         return new static($ordinalOrName);
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getDefinition(): EnumDefinitionInterface
-    {
-        return $this->definition;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getOrdinal(): int
-    {
-        return $this->ordinal;
     }
 
     /**

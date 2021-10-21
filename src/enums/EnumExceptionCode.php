@@ -11,7 +11,7 @@
  * Class name...: EnumExceptionCode.php
  * Project name.: iomywiab-php-enums
  * Module name..: iomywiab-php-enums
- * Last modified: 2021-10-20 20:38:50
+ * Last modified: 2021-10-21 08:08:25
  */
 
 declare(strict_types=1);

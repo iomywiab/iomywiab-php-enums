@@ -1,8 +1,11 @@
 {
   "name": "iomywiab/iomywiab-php-enums",
+  "type": "library",
   "description": "Basic wrapper classes for enumerations",
+  "keywords": ["enum", "enumeration"],
+  "homepage": "https://github.com/iomywiab/iomywiab-php-enums",
   "minimum-stability": "stable",
-  "license": "proprietary",
+  "license": "MIT",
   "authors": [
     {
       "name": "iomywiab",
@@ -10,7 +13,7 @@
     }
   ],
   "require": {
-    "php": "^7.1 || ^8.0",
+    "php": "^7.2 || ^8.0",
     "psr/container": "^1.0",
     "iomywiab/iomywiab-php-constraints": "^1.0"
   },

@@ -11,13 +11,14 @@
  * Class name...: EnumSet.php
  * Project name.: iomywiab-php-enums
  * Module name..: iomywiab-php-enums
- * Last modified: 2021-10-20 20:38:50
+ * Last modified: 2021-10-21 08:08:25
  */
 
 declare(strict_types=1);
 
 namespace iomywiab\iomywiab_php_enums;
 
+use iomywiab\iomywiab_php_enums\helpers\SplSubjectTrait;
 use LogicException;
 use iomywiab\iomywiab_php_enums\enums\EnumFormat;
 use iomywiab\iomywiab_php_enums\exceptions\EnumException;
