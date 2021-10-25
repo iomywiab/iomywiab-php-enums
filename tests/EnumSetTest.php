@@ -25,7 +25,9 @@ require_once __DIR__ . '/test.php';
 use iomywiab\iomywiab_php_enums\EnumDefinition;
 use iomywiab\iomywiab_php_enums\enums\EnumFormat;
 use iomywiab\iomywiab_php_enums\EnumSet;
+use iomywiab\iomywiab_php_enums\exceptions\EnumException;
 use iomywiab\iomywiab_php_enums\interfaces\EnumSetInterface;
+use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -37,8 +39,8 @@ class EnumSetTest extends TestCase
 {
 
     /**
-     * @throws \PHPUnit\Framework\ExpectationFailedException
-     * @throws \iomywiab\iomywiab_php_enums\exceptions\EnumException
+     * @throws ExpectationFailedException
+     * @throws EnumException
      */
     public function testValue(): void
     {
@@ -156,8 +158,8 @@ class EnumSetTest extends TestCase
      * @param EnumSetInterface $set
      * @param array            $ordinals
      * @param array            $names
-     * @throws \PHPUnit\Framework\ExpectationFailedException
-     * @throws \iomywiab\iomywiab_php_enums\exceptions\EnumException
+     * @throws ExpectationFailedException
+     * @throws EnumException
      */
     private function checkSet(string $valueClass, EnumSetInterface $set, array $ordinals, array $names): void
     {
@@ -189,8 +191,8 @@ class EnumSetTest extends TestCase
     }
 
     /**
-     * @throws \PHPUnit\Framework\ExpectationFailedException
-     * @throws \iomywiab\iomywiab_php_enums\exceptions\EnumException
+     * @throws ExpectationFailedException
+     * @throws EnumException
      */
     public function testBitmask(): void
     {

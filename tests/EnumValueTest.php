@@ -62,6 +62,7 @@ require_once __DIR__ . '/test.php';
 
 use iomywiab\iomywiab_php_enums\exceptions\EnumAttributeNotFoundException;
 use iomywiab\iomywiab_php_enums\exceptions\EnumException;
+use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -74,8 +75,9 @@ class EnumValueTest extends TestCase
     /**
      * @param int    $ordinal
      * @param string $name
-     * @throws \PHPUnit\Framework\ExpectationFailedException
-     * @throws \iomywiab\iomywiab_php_enums\exceptions\EnumException
+     *
+     * @throws ExpectationFailedException
+     * @throws EnumException
      */
     protected function check(int $ordinal, string $name): void
     {
@@ -102,8 +104,8 @@ class EnumValueTest extends TestCase
     }
 
     /**
-     * @throws \PHPUnit\Framework\ExpectationFailedException
-     * @throws \iomywiab\iomywiab_php_enums\exceptions\EnumException
+     * @throws ExpectationFailedException
+     * @throws EnumException
      */
     public function testValid()
     {
@@ -172,7 +174,8 @@ class EnumValueTest extends TestCase
     }
 
     /**
-     * @throws \PHPUnit\Framework\ExpectationFailedException
+     * @throws ExpectationFailedException
+     * @noinspection SpellCheckingInspection
      */
     public function testAttributes()
     {

@@ -22,6 +22,8 @@ require_once __DIR__ . '/test.php';
 
 use iomywiab\iomywiab_php_enums\EnumDefinition;
 use iomywiab\iomywiab_php_enums\enums\EnumFormat;
+use iomywiab\iomywiab_php_enums\exceptions\EnumException;
+use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -35,8 +37,8 @@ class EnumDefinitionTest extends TestCase
     /**
      * @param EnumDefinition $definition
      * @param array          $values
-     * @throws \PHPUnit\Framework\ExpectationFailedException
-     * @throws \iomywiab\iomywiab_php_enums\exceptions\EnumException
+     * @throws ExpectationFailedException
+     * @throws EnumException
      */
     protected function checkDefinition(
         EnumDefinition $definition,
@@ -101,8 +103,8 @@ class EnumDefinitionTest extends TestCase
     }
 
     /**
-     * @throws \PHPUnit\Framework\ExpectationFailedException
-     * @throws \iomywiab\iomywiab_php_enums\exceptions\EnumException
+     * @throws ExpectationFailedException
+     * @throws EnumException
      */
     public function testValid()
     {
