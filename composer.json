@@ -34,7 +34,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/iomywiab/iomywiab-php-constraints.git"
+      "url": "git@github.com:iomywiab/iomywiab-php-constraints.git"
     }
   ]
 }

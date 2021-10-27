@@ -1,25 +1,25 @@
 {
-    "_readme": [
-        "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
-    ],
-    "content-hash": "863113a845a20b35b672956ff32164c1",
-    "packages": [
-        {
-            "name": "iomywiab/iomywiab-php-constraints",
-            "version": "1.0.0-stable",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/iomywiab/iomywiab-php-constraints.git",
-                "reference": "08dc269128aef0705b8d05a8d1eac7136230edff"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/iomywiab/iomywiab-php-constraints/zipball/08dc269128aef0705b8d05a8d1eac7136230edff",
-                "reference": "08dc269128aef0705b8d05a8d1eac7136230edff",
-                "shasum": ""
-            },
+  "_readme": [
+    "This file locks the dependencies of your project to a known state",
+    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+    "This file is @generated automatically"
+  ],
+  "content-hash": "2d431924758aa35ca9811b49aaf4bd9a",
+  "packages": [
+    {
+      "name": "iomywiab/iomywiab-php-constraints",
+      "version": "1.0.2-stable",
+      "source": {
+        "type": "git",
+        "url": "git@github.com:iomywiab/iomywiab-php-constraints.git",
+        "reference": "b0406dc7ee33c69f02028350535731df9220bcf5"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/iomywiab/iomywiab-php-constraints/zipball/b0406dc7ee33c69f02028350535731df9220bcf5",
+        "reference": "b0406dc7ee33c69f02028350535731df9220bcf5",
+        "shasum": ""
+      },
             "require": {
                 "php": "^7.1 || ^8.0"
             },
@@ -37,22 +37,25 @@
                     "iomywiab\\iomywiab_php_constraints_tests\\": "tests/"
                 }
             },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "iomywiab",
-                    "email": "iomywiab@premium-postfach.de"
-                }
-            ],
-            "description": "Generic constraints, mostly used for parameter checking",
-            "support": {
-                "source": "https://github.com/iomywiab/iomywiab-php-constraints/tree/1.0.0-stable",
-                "issues": "https://github.com/iomywiab/iomywiab-php-constraints/issues"
-            },
-            "time": "2021-06-23T16:15:48+00:00"
-        },
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "iomywiab",
+          "email": "iomywiab@premium-postfach.de"
+        }
+      ],
+      "description": "Generic constraints,  mostly used for parameter checking",
+      "homepage": "https://github.com/iomywiab/iomywiab-php-constraints",
+      "keywords": [
+        "check",
+        "constraint",
+        "validation",
+        "verification"
+      ],
+      "time": "2021-10-27T16:59:21+00:00"
+    },
         {
             "name": "psr/container",
             "version": "1.1.1",
@@ -1561,7 +1564,6 @@
                     "type": "github"
                 }
             ],
-            "abandoned": true,
             "time": "2020-11-30T07:30:19+00:00"
         },
         {
