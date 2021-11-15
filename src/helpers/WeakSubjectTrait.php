@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of the iomywiab-php-enums package.
  *
@@ -7,30 +8,33 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * File name....: SplSubjectTrait.php
- * Class name...: SplSubjectTrait.php
+ * File name....: WeakSubjectTrait.php
+ * Class name...: WeakSubjectTrait.php
  * Project name.: iomywiab-php-enums
  * Module name..: iomywiab-php-enums
- * Last modified: 2021-11-14 11:46:36
+ * Last modified: 2021-11-13 00:38:53
  */
 declare(strict_types=1);
 
 namespace iomywiab\iomywiab_php_enums\helpers;
 
-use SplObjectStorage;
+if ((PHP_MAJOR_VERSION < 8)) {
+    exit('Trait [WeakSubjectTrait] is available for PHP >=8.0.0');
+}
+
 use SplObserver;
+use WeakMap;
+
 
 /**
- * Attention! Usage of trait might lead to memory leaks ig observer references subject.
- * If you are on PHP >= 8.0 use WeakSubjectTrait instead!
  * Trait SplSubjectTrait
  */
-trait SplSubjectTrait /* implements SplSubject */
+trait WeakSubjectTrait /* implements SplSubject */
 {
     /**
-     * @var SplObjectStorage
+     * @var WeakMap
      */
-    private $observers;
+    private WeakMap $observers;
 
     /**
      * @param SplObserver $observer
@@ -38,9 +42,9 @@ trait SplSubjectTrait /* implements SplSubject */
     public function attach(SplObserver $observer): void
     {
         if (empty($this->observers)) {
-            $this->observers = new SplObjectStorage();
+            $this->observers = new WeakMap();
         }
-        $this->observers->attach($observer);
+        $this->observers[$observer] = true;
     }
 
     /**
@@ -49,7 +53,7 @@ trait SplSubjectTrait /* implements SplSubject */
     public function detach(SplObserver $observer): void
     {
         if (!empty($this->observers)) {
-            $this->observers->detach($observer);
+            unset($this->observers[$observer]);
         }
     }
 
