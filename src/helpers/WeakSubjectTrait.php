@@ -12,7 +12,7 @@
  * Class name...: WeakSubjectTrait.php
  * Project name.: iomywiab-php-enums
  * Module name..: iomywiab-php-enums
- * Last modified: 2021-11-13 00:38:53
+ * Last modified: 2021-12-06 16:58:22
  */
 declare(strict_types=1);
 
@@ -32,16 +32,16 @@ use WeakMap;
 trait WeakSubjectTrait /* implements SplSubject */
 {
     /**
-     * @var WeakMap
+     * @var WeakMap|null
      */
-    private WeakMap $observers;
+    private ?WeakMap $observers;
 
     /**
      * @param SplObserver $observer
      */
     public function attach(SplObserver $observer): void
     {
-        if (empty($this->observers)) {
+        if (!isset($this->observers)) {
             $this->observers = new WeakMap();
         }
         $this->observers[$observer] = true;
@@ -52,14 +52,17 @@ trait WeakSubjectTrait /* implements SplSubject */
      */
     public function detach(SplObserver $observer): void
     {
-        if (!empty($this->observers)) {
+        if (isset($this->observers)) {
             unset($this->observers[$observer]);
+            if (0 === $this->observers->count()) {
+                unset($this->observers);
+            }
         }
     }
 
     public function notify(): void
     {
-        if (!empty($this->observers)) {
+        if (isset($this->observers)) {
             foreach ($this->observers as $observer) {
                 $observer->update($this);
             }

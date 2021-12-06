@@ -11,7 +11,7 @@
  * Class name...: SplSubjectTrait.php
  * Project name.: iomywiab-php-enums
  * Module name..: iomywiab-php-enums
- * Last modified: 2021-11-14 11:46:36
+ * Last modified: 2021-12-06 16:58:22
  */
 declare(strict_types=1);
 
@@ -28,7 +28,7 @@ use SplObserver;
 trait SplSubjectTrait /* implements SplSubject */
 {
     /**
-     * @var SplObjectStorage
+     * @var SplObjectStorage|null
      */
     private $observers;
 
@@ -37,7 +37,7 @@ trait SplSubjectTrait /* implements SplSubject */
      */
     public function attach(SplObserver $observer): void
     {
-        if (empty($this->observers)) {
+        if (!isset($this->observers)) {
             $this->observers = new SplObjectStorage();
         }
         $this->observers->attach($observer);
@@ -48,14 +48,17 @@ trait SplSubjectTrait /* implements SplSubject */
      */
     public function detach(SplObserver $observer): void
     {
-        if (!empty($this->observers)) {
+        if (isset($this->observers)) {
             $this->observers->detach($observer);
+            if (0 === $this->observers->count()) {
+                unset($this->observers);
+            }
         }
     }
 
     public function notify(): void
     {
-        if (!empty($this->observers)) {
+        if (isset($this->observers)) {
             foreach ($this->observers as $observer) {
                 $observer->update($this);
             }
