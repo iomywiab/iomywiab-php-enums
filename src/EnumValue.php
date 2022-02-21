@@ -2,7 +2,7 @@
 /*
  * This file is part of the iomywiab-php-enums package.
  *
- * Copyright (c) 2012-2021 Patrick Nehls <iomywiab@premium-postfach.de>, Tornesch, Germany.
+ * Copyright (c) 2012-2022 Patrick Nehls <iomywiab@premium-postfach.de>, Tornesch, Germany.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,7 +11,7 @@
  * Class name...: EnumValue.php
  * Project name.: iomywiab-php-enums
  * Module name..: iomywiab-php-enums
- * Last modified: 2021-10-21 08:24:44
+ * Last modified: 2022-02-21 13:22:27
  */
 
 declare(strict_types=1);
@@ -169,6 +169,16 @@ abstract class EnumValue implements EnumValueInterface
     public function unserialize($data): void
     {
         $this->ordinal = unserialize($data, ['allowed_classes' => false]);
+    }
+
+    public function __serialize(): array
+    {
+        return [$this->ordinal];
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $this->ordinal = $data[0];
     }
 
     /**
